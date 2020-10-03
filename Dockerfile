@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 
-LABEL maintainer="Bibin Wilson <bibinwilsonn@gmail.com>"
+LABEL maintainer="lauradonoso"
 
 # Make sure the package repository is up to date.
 RUN apt-get update && \
@@ -14,6 +14,8 @@ RUN apt-get update && \
     apt-get install -qy openjdk-8-jdk && \
 # Install maven
     apt-get install -qy maven && \
+#Install aws-cli
+    sudo apt-get install awscli \
 # Cleanup old packages
     apt-get -qy autoremove && \
 # Add user jenkins to the image
